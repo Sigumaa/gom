@@ -10,7 +10,7 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: gm <command>")
+		fmt.Println("Usage: gom <command>")
 		return
 	}
 

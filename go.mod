@@ -1,3 +1,3 @@
-module github.com/Sigumaa/gm
+module github.com/Sigumaa/gom
 
 go 1.21.0
