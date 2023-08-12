@@ -24,6 +24,7 @@ func main() {
 			fmt.Println(err)
 			return
 		}
+		fmt.Println("go.mod created")
 	}
 }
 
@@ -60,10 +61,11 @@ func gmInit() error {
 	origin = strings.Replace(origin, "git@", "", 1)
 	origin = strings.Replace(origin, "https://", "", 1)
 	origin = strings.Replace(origin, ".git", "", 1)
+	origin = strings.Replace(origin, ":", "/", 1)
 
 	_, err = exec.Command("go", "mod", "init", origin).Output()
 	if err != nil {
-		return err
+		return errors.New("go mod init failed")
 	}
 
 	return nil
